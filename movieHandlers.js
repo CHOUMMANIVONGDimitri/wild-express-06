@@ -19,7 +19,7 @@ const getMovieById = (req, res) => {
     .query(`select * from movies where id = ?`, [id])
     .then(([movies]) => {
       if (movies[0] != null) {
-        res.json(movie[0]);
+        res.json(movies[0]);
       } else {
         res.status(404).send("Not Found");
       }
